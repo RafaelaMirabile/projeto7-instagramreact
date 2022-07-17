@@ -391,3 +391,16 @@
       top: 4px;
     }
   }
+  
+  .fundo .acoes div:nth-child(1) >.heart.md.hydrated.red {
+    color:red;
+  }
+  .curtidas{
+    display:flex;
+    padding: 8px 16px;
+  }
+  .curtidas .texto{
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+  }

@@ -1,18 +1,4 @@
-function Acoes(props){
-    return(
-            <div class="acoes">
-                <div>
-                    <ion-icon name={props.icon1}></ion-icon>
-                    <ion-icon name={props.icon2}></ion-icon>
-                    <ion-icon name={props.icon3}></ion-icon>
-                </div>
-                <div>
-                    <ion-icon name={props.icon4}></ion-icon>
-                </div>
-            </div>
-
-    );
-}
+import React from "react";
 
 function Topo(props){
     return(
@@ -28,12 +14,36 @@ function Topo(props){
 
     )
 }
-function Conteudo(props){
+
+function Conteudo(props){ 
+    const[name,setName]= React.useState("heart-outline");
+    const[classe, setClasse]= React.useState(" heart md hydrated");
+    
+    function Click(){
+            setClasse("heart red md hydrated");
+            setName("heart");
+    }
+    
     return(
-        <div class="conteudo">
-            <img src={props.imgPost}/>
+        <div>
+            <div class="conteudo">
+                <img src={props.imgPost}/>
+                <div className="fundo">
+                    <div className="acoes">
+                        <div>
+                            <ion-icon onClick={Click} class={classe} name={name}></ion-icon>
+                            <ion-icon name={props.icon2}></ion-icon>
+                            <ion-icon name={props.icon3}></ion-icon>
+                        </div>
+                        <div>
+                            <ion-icon name={props.icon4}></ion-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    )
+
+    );
 }
 
 function Curtidas(props){
@@ -52,11 +62,11 @@ export default function Posts(){
     let postInfo =[
         {imgUsuario: "images/meowed 2 (1).png", usuario:"meowed", 
         imgPost: "images/gato-telefone 1 (1).png", imgCurtida:"images/respondeai 2 (1).png", 
-        texto:"respondeai"},
+        texto:"respondeai",icon2:"chatbubble-outline",icon3:"paper-plane-outline", icon4:"bookmark-outline"},
         
         {imgUsuario: "images/barked 2 (1).png", usuario:"barked", 
         imgPost: "images/dog 1 (1).png",imgCurtida:"images/meowed 2 (1).png", 
-        texto:"adorable_animals"}
+        texto:"adorable_animals",icon2:"chatbubble-outline",icon3:"paper-plane-outline", icon4:"bookmark-outline"}
     ];
 
 return(
@@ -64,19 +74,10 @@ return(
     postInfo.map((post,index)=>
     <div className="posts">
                 <div key={index} className="post">
-        <Topo imgUsuario={post.imgUsuario} usuario ={post.usuario}/>
-            <Conteudo  imgPost={post.imgPost}/>
-                <div className="fundo">
-                <Acoes
-                icon1="heart-outline"
-                icon2="chatbubble-outline"
-                icon3="paper-plane-outline"
-                icon4="bookmark-outline"
-                />
-                <Curtidas imgUsuario={post.imgUsuario} texto={post.texto}/>
+                    <Topo imgUsuario={post.imgUsuario} usuario ={post.usuario}/>
+                    <Conteudo  imgPost={post.imgPost} icon2={post.icon2} icon3={post.icon3} icon4={post.icon4} />
+                    <Curtidas imgUsuario={post.imgUsuario} texto={post.texto}/>
                 </div>
-                </div>
-
     </div>
     )
 );
