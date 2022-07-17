@@ -1,11 +1,13 @@
-import Topo from './Topo';
-import ContainerBox from './ContainerBox';
+import Posts from "./Posts";
+import Stories from "./Stories";
 
 export default function App(){
-    return(
+    return (
         <div>
-        <Topo/>
-        <ContainerBox/>
-	    </div>
-    );
+        <Stories/>
+        <Posts/>
+        </div>
+    )
 }
+
+
