@@ -1,13 +1,13 @@
-import Posts from "./Posts";
-import Stories from "./Stories";
+import Corpo from "./Corpo"
+import Navbar from "./Navbar"
 
 export default function App(){
     return (
         <div>
-        <Stories/>
-        <Posts/>
+            <Navbar/>
+            <Corpo/>
         </div>
-    )
+    );
 }
 
 

@@ -50,15 +50,13 @@ function Curtidas(props){
 export default function Posts(){
     
     let postInfo =[
-
-     
         {imgUsuario: "images/meowed 2 (1).png", usuario:"meowed", 
         imgPost: "images/gato-telefone 1 (1).png", imgCurtida:"images/respondeai 2 (1).png", 
         texto:"respondeai"},
         
-     
         {imgUsuario: "images/barked 2 (1).png", usuario:"barked", 
-        imgPost: "images/dog 1 (1).png",imgCurtida:"images/meowed 2 (1).png", texto:"adorable_animals"}
+        imgPost: "images/dog 1 (1).png",imgCurtida:"images/meowed 2 (1).png", 
+        texto:"adorable_animals"}
     ];
 
 return(
@@ -80,12 +78,7 @@ return(
                 </div>
 
     </div>
-
-
-            
-
     )
-
 );
 }
  
