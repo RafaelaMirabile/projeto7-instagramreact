@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 function Topo(props){
     return(
@@ -16,22 +16,28 @@ function Topo(props){
 }
 
 function Conteudo(props){ 
-    const[name,setName]= React.useState("heart-outline");
-    const[classe, setClasse]= React.useState(" heart md hydrated");
     
+    const[name2,setName]= React.useState("heart-outline");
+    const[classe2, setClasse]= React.useState(" heart md hydrated");
+
     function Click(){
-            setClasse("heart red md hydrated");
-            setName("heart");
+        
+        setClasse("heart red md hydrated");
+        setName("heart");
+        
+        if(name2 === "heart"){
+            setName("heart-outline");
+            setClasse("heart md hydrated");
+        }
     }
     
     return(
-        <div>
-            <div class="conteudo">
-                <img src={props.imgPost}/>
+            <div class="conteudo" onClick={Click}>
+                <img  src={props.imgPost}/>
                 <div className="fundo">
                     <div className="acoes">
                         <div>
-                            <ion-icon onClick={Click} class={classe} name={name}></ion-icon>
+                            <ion-icon onClick={Click} class={classe2} name={name2}></ion-icon>
                             <ion-icon name={props.icon2}></ion-icon>
                             <ion-icon name={props.icon3}></ion-icon>
                         </div>
@@ -41,8 +47,6 @@ function Conteudo(props){
                     </div>
                 </div>
             </div>
-        </div>
-
     );
 }
 
